@@ -3,4 +3,5 @@ node_modules/
 package.json
 package-lock.json
 commitlint.config.js
+*.egg-info
 test.py

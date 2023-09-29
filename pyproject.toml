@@ -1,0 +1,23 @@
+[project]
+name = "hugo_encryptor"
+description = "A tool for encrypting hugo posts"
+version = "0.1.0"
+
+dependencies = [
+    "pycrypto==2.6.1",
+    "beautifulsoup4==4.7.1",
+    "lxml==4.9.1"
+]
+
+[project.scripts]
+hugo-encrypt = "hugo_encryptor.encrypt:main"
+
+[tool.setuptools]
+packages = ['hugo_encryptor']
+
+[project.optional-dependencies]
+dev = [
+    "tox",
+    "pre-commit",
+    "bump2version"
+]

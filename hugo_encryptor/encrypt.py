@@ -22,7 +22,7 @@ class AESCrypt(object):
         return cryptor.encrypt(text)
 
 
-if __name__ == '__main__':
+def main():
     for dirpath, dirnames, filenames in os.walk('public'):
         for filename in filenames:
             if not filename.lower().endswith('.html'):
@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
             if len(blocks):
                 soup.body.append(soup.new_tag("script", src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"))
-                script_tag = soup.new_tag("script", src="/decrypt.js")
+                script_tag = soup.new_tag("script", src="decrypt.js")
                 
                 soup.body.append(script_tag)
 
@@ -91,3 +91,6 @@ if __name__ == '__main__':
 
         with open(xmlpath, 'w', encoding='utf-8') as f:
             f.write(str(soup))
+
+if __name__ == '__main__':
+    main()
